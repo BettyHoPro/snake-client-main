@@ -1,3 +1,4 @@
+
 const net = require("net");
 const connect = function () {
   const conn = net.createConnection({
@@ -14,7 +15,6 @@ const connect = function () {
     conn.write("Name: BH");
   });
   conn.on("connect", () => {
-   
     setInterval(() => {
       console.log("I move left");
       conn.write("Move: left")
