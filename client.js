@@ -1,6 +1,6 @@
 
 const net = require("net");
-const connect = function () {
+const connectFunc = function () {
   const conn = net.createConnection({
     host: "135.23.222.131",
     port: 50542,
@@ -14,16 +14,16 @@ const connect = function () {
     console.log("Successfully connected to game server, rock-in-roll!🥰");
     conn.write("Name: BH");
   });
-  conn.on("connect", () => {
-    setInterval(() => {
-      conn.write("Move: left")
-    }, 50);
-    setTimeout(() => {
-      conn.write("Move: up")
-    }, 120);
-  });
+  // conn.on("connect", () => {
+  //   // setInterval(() => {
+  //   //   conn.write("Move: left")
+  //   // }, 50);
+  //   // setTimeout(() => {
+  //   //   conn.write("Move: up")
+  //   // }, 120);
+  // });
   return conn;
 };
 
 
-module.exports = {connect};
+module.exports = { connectOBValue: connectFunc };
