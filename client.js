@@ -16,11 +16,9 @@ const connect = function () {
   });
   conn.on("connect", () => {
     setInterval(() => {
-      console.log("I move left");
       conn.write("Move: left")
     }, 50);
     setTimeout(() => {
-      console.log("I move up");
       conn.write("Move: up")
     }, 120);
   });
